@@ -1,0 +1,46 @@
+{
+  "name": "transliteration.crh",
+  "version": "0.0.1",
+  "description": "Transliteration tool for Crimean Tatar language (Latin and Cyrillic alphabets)",
+  "main": "./lib/transliteration.crh.js",
+  "bin": {
+    "crh": "./bin/crh"
+  },
+  "scripts": {
+    "test": "$(npm bin)/mocha -u bdd -R spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/prosvita/crh.transliteration.git"
+  },
+  "keywords": [
+    "transliterate",
+    "transliteration",
+    "crh",
+    "crimeantatar",
+    "crimean tatar",
+    "qırımtatar",
+    "qırım",
+    "Къырымтатар",
+    "Кримськотатарська",
+    "Крымскотатарский",
+    "Крымско-татарский"
+  ],
+  "author": {
+    "name": "Pavlo Bashynskyi",
+    "email": "levonet@gmail.com",
+    "url": "https://github.com/levonet"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/prosvita/crh.transliteration/issues"
+  },
+  "homepage": "https://github.com/prosvita/crh.transliteration",
+  "dependencies": {
+    "commander": "^2.9.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.1.2"
+  }
+}
