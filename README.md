@@ -2,6 +2,7 @@
 
 [![NPM version](https://img.shields.io/npm/v/transliteration.crh.svg?style=flat)](https://www.npmjs.org/package/transliteration.crh)
 [![Build Status](https://travis-ci.org/prosvita/crh.transliteration.svg?branch=master)](https://travis-ci.org/prosvita/crh.transliteration)
+[![Coverage Status](https://coveralls.io/repos/github/prosvita/crh.transliteration/badge.svg?branch=master)](https://coveralls.io/github/prosvita/crh.transliteration?branch=master)
 
 JavaScript library and tool for transliteration cyrillic Crimean Tatar words to latin and back.
 Based on [transliterator](http://medeniye.org/node/530) developed by Alexander Goryainov, 2006-2009.
