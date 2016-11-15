@@ -11,7 +11,9 @@
   },
   "scripts": {
     "lint": "$(npm bin)/eslint .",
-    "test": "npm run lint && $(npm bin)/mocha -u bdd -R spec"
+    "test": "npm run lint && npm run unit-test-coverage",
+    "unit-test": "$(npm bin)/mocha -u bdd -R spec",
+    "unit-test-coverage": "$(npm bin)/istanbul cover $(npm bin)/_mocha -- -u bdd -R spec --recursive test"
   },
   "repository": {
     "type": "git",
@@ -47,6 +49,7 @@
     "chai": "^3.5.0",
     "eslint": "^3.10.1",
     "eslint-config-pedant": "^0.8.0",
+    "istanbul": "^0.4.5",
     "mocha": "^3.1.2"
   }
 }
