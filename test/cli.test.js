@@ -1,20 +1,33 @@
 const assert = require('chai').assert;
-const exec = require('sync-exec');
+const exec = require('child_process').execSync;
+const spawn = require('child_process').spawnSync;
 const fs = require('fs');
 const textLat = fs.readFileSync('test/text.crh.md', 'utf8');
 const textCyr = fs.readFileSync('test/text.crh-RU.md', 'utf8');
 
 describe('run cli', () => {
     it('without options', () => {
-        assert.equal(exec('./bin/crh').stderr, '[Error: Must select one of the options: --to-cyrillic, --from-cyrillic]\n');
+        assert.equal(
+            spawn('./bin/crh', [], {encoding: 'utf8'}).stderr,
+            'Must select one of the options: --to-cyrillic, --from-cyrillic\n');
+    });
+
+    it('more than one action', () => {
+        assert.equal(
+            spawn('./bin/crh', [ '-c', '-l' ], {encoding: 'utf8'}).stderr,
+            'Must select one of the options: --to-cyrillic, --from-cyrillic\n');
     });
 
     it('--to-cyrillic to stdout', () => {
-        assert.equal(exec('./bin/crh -c test/text.crh.md').stdout, textCyr);
+        assert.equal(
+            spawn('./bin/crh', [ '-c', 'test/text.crh.md' ], {encoding: 'utf8'}).stdout,
+            textCyr);
     });
 
     it('--to-cyrillic without file', () => {
-        assert.equal(exec('./bin/crh -c').stderr, '[Error: Can\'t select source file]\n');
+        assert.equal(
+            spawn('./bin/crh', ['-c'], {encoding: 'utf8'}).stderr,
+            'Can\'t select source file\n');
     });
 
     it('--from-cyrillic to file', () => {
@@ -24,6 +37,8 @@ describe('run cli', () => {
     });
 
     it('--from-cyrillic from wrong file', () => {
-        assert.equal(exec('./bin/crh -l wrong.file').stderr, '[Error: ENOENT: no such file or directory, open \'wrong.file\']\n');
+        assert.equal(
+            spawn('./bin/crh', [ '-l', 'wrong.file' ]).status,
+            254);
     });
 });
