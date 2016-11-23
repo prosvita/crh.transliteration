@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Language" content="crh">
+        <title>QIRIMTATARCA METİNLER İÇÜN ELİFBE ÇEVİRİCİ</title>
+        <script type="text/javascript" src="dist/transliteration.crh.min.js"></script>
+    </head>
+    <body>
+        <div class="content">
+            <h1 style="text-align: center;">QIRIMTATARCA METİNLER İÇÜN ELİFBE ÇEVİRİCİ</h1>
+            <p><strong>LÜTFEN, ŞULARĞA DİQQAT ETİÑİZ Kİ!</strong><br>
+            <strong>1</strong>. Bazı sözlerde transliterator hata yapıp ola. Başta standart transliteratsiya qaidelerine boysunmağan ecnebiy has isimlerge (coğrafiy ve insan adları) diqqat etiñiz. Bundan ğayrı transliterator kiril urufatında birday latin urufatında ise farqlıca (ve aksine) yazılğan sözlerde de hata yapa. Meselâ, <em>купе</em> sözü er vaqıt  <em>küpe</em> olaraq çevirilir, faqat aslında eki variantı ola bile: <em>küpe</em> (sırğa) ve <em>kupe</em> (tren kupesi), <em>yüz</em> sözü er vaqıt <em>юзь</em> olaraq çevirilir, aslında ise <em>юзь</em> (bet) ve <em>юз</em> (100) variantları ola bile.<br>
+            <strong>2</strong>. <span style="color: #ff0000;">Qırımtatar kiril elifbesinen yazğanda <strong>ё</strong> yerine <strong>е</strong> yazmağa olmaz! Misal içün <em>сёз</em>, <em>чёль</em>, <em>ёкъ</em>, <em>ёл</em> – doğru, <em>сез</em>, <em>чель</em>, <em>екъ</em>, <em>ел</em> – yañlış.</span></p>
+            <form name="formText" style="text-align: center;">
+                <textarea style="width: 100%;" rows="17" name="editSrc"></textarea>
+                <input onclick="this.form.editSrc.value=transliteration.crh.fromCyrillic(this.form.editSrc.value)" name="buttonConvert" type="button" value="kiril &gt; latin">
+                <input type="reset" value="temizle">
+                <input onclick="this.form.editSrc.value=transliteration.crh.toCyrillic(this.form.editSrc.value)" name="buttonConvert" type="button" value="latin &gt; kiril">
+            </form>
+            <p>Qırımtatarca yazılğan bir metinni kiril urufatından latin urufatına ya da aksine çevirmek içün metinni pencerege kirsetip uyğun dögmege basıñız.</p>
+            <h4>© Aleksandr Gorâinov, 2006-2009</h4>
+            <h4>Programmacı <a href="mailto:alessandro.crimeano@gmail.com">haber etecek</a> hatalarıñız içün teşekkür bildire.</h4>
+        </div>
+        <script type="text/javascript">
+            console.log('transliteration.crh.version=' + transliteration.crh.version);
+        </script>
+    </body>
+</html>

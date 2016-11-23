@@ -10,6 +10,9 @@
     "node": ">=4"
   },
   "scripts": {
+    "browserify": "$(npm bin)/browserify lib/bundle.js --debug | $(npm bin)/exorcist ./dist/transliteration.crh.js.map > ./dist/transliteration.crh.js",
+    "uglify": "$(npm bin)/uglifyjs ./dist/transliteration.crh.js --compress --mangle --in-source-map ./dist/transliteration.crh.js.map --source-map ./dist/transliteration.crh.min.js.map --source-map-url transliteration.crh.min.js.map -o ./dist/transliteration.crh.min.js",
+    "dist": "npm run browserify && npm run uglify",
     "lint": "$(npm bin)/eslint .",
     "test": "npm run lint && npm run unit-test-coverage",
     "unit-test": "$(npm bin)/mocha -u bdd -R spec",
@@ -46,10 +49,12 @@
     "commander": "^2.9.0"
   },
   "devDependencies": {
+    "browserify": "^13.1.1",
     "chai": "^3.5.0",
     "eslint": "^3.10.1",
-    "eslint-config-pedant": "^0.8.0",
+    "exorcist": "^0.4.0",
     "istanbul": "^0.4.5",
-    "mocha": "^3.1.2"
+    "mocha": "^3.1.2",
+    "uglify-js": "^2.7.4"
   }
 }
