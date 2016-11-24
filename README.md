@@ -13,7 +13,7 @@ Published as npm package - [transliteration.crh](https://www.npmjs.com/package/t
 
 ## Install in Node.js
 
-```
+```bash
 npm install transliteration.crh --save
 ```
 
@@ -21,6 +21,28 @@ npm install transliteration.crh --save
 var transliteration=require('transliteration.crh');
 transliteration.crh.fromCyrillic('Мерхаба!'); // Merhaba!
 transliteration.crh.toCyrillic('Merhaba!'); // Мерхаба!
+```
+
+## Download the library and use in browser
+
+```bash
+# Install bower if not already installed
+# npm install bower -g
+bower install transliteration.crh
+```
+
+```html
+<html>
+<head>
+  <script src="bower_components/transliteration.crh/dist/transliteration.crh.min.js"></script>
+</head>
+<body>
+  <script>
+    console.log(transliteration.crh.fromCyrillic('Мерхаба!')); // Merhaba!
+    console.log(transliteration.crh.toCyrillic('Merhaba!')); // Мерхаба!
+  </script>
+</body>
+</html>
 ```
 
 ## Install command line tool globally
