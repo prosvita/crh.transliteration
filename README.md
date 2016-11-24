@@ -1,15 +1,16 @@
 # crh.transliteration
 
 [![NPM version](https://img.shields.io/npm/v/transliteration.crh.svg?style=flat)](https://www.npmjs.org/package/transliteration.crh)
+[![Bower](https://img.shields.io/bower/v/transliteration.crh.svg)](https://github.com/prosvita/crh.transliteration)
 [![Build Status](https://travis-ci.org/prosvita/crh.transliteration.svg?branch=master)](https://travis-ci.org/prosvita/crh.transliteration)
 [![Coverage Status](https://coveralls.io/repos/github/prosvita/crh.transliteration/badge.svg?branch=master)](https://coveralls.io/github/prosvita/crh.transliteration?branch=master)
 
 JavaScript library and tool for transliteration cyrillic Crimean Tatar words to latin and back.
 Based on [transliterator](http://medeniye.org/node/530) developed by Alexander Goryainov, 2006-2009.
 
-Library can be used on node.js platform.
+Library can be used in browser and on node.js platform. Browser version can be found in the dist directory.
 
-Published as npm package - [transliteration.crh](https://www.npmjs.com/package/transliteration.crh).
+Browse the demos on https://prosvita.github.io/crh.transliteration/
 
 ## Install in Node.js
 
@@ -23,7 +24,11 @@ transliteration.crh.fromCyrillic('Мерхаба!'); // Merhaba!
 transliteration.crh.toCyrillic('Merhaba!'); // Мерхаба!
 ```
 
-## Download the library and use in browser
+## Use in browser
+
+This module should support all major browsers including IE 7-8.
+
+### bower
 
 ```bash
 # Install bower if not already installed
@@ -43,6 +48,12 @@ bower install transliteration.crh
   </script>
 </body>
 </html>
+```
+
+### Vanilla
+
+```html
+<script src="https://prosvita.github.io/crh.transliteration/dist/transliteration.crh.min.js"></script>
 ```
 
 ## Install command line tool globally
