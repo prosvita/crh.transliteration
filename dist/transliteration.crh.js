@@ -2606,7 +2606,7 @@ function transliterate(text, reMap) {
 },{"./crh2cyr":2,"./cyr2crh":3}],5:[function(require,module,exports){
 module.exports={
   "name": "transliteration.crh",
-  "version": "0.1.0",
+  "version": "0.2.1",
   "description": "Transliteration tool for Crimean Tatar language (Latin and Cyrillic alphabets)",
   "main": "./lib/transliteration.crh.js",
   "bin": {
