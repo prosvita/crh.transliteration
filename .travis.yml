@@ -7,8 +7,10 @@ after_success:
   - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && echo "Coverage data was sent to coveralls!"
 deploy:
   provider: npm
+  email: levonet@gmail.com
   api_key:
     secure: EX4azZwFSX5DeK64+kUArsfrt8K+YmRAH+Sjpg/tGE8aEwsXDs2vFkzhZEmYiSs0ES1kS7bAZz5D4SIIZv4yg6/2ZYEa8Lhxe3Vk8Z7TXiI0pEy+b5L1yjnoaBa8xho6akii4OqqOOhOzNUBqCpb1nWZUQ9m5pvDg7yIRH8ip1EaLOYzQ0SE51Vyv6ChH/s2cAFztpRc2WvigDaU7qWr8wREKpYO2h4T2A6xayP2BRl5iCpfhG50ojPuDv17iY3zSLwBk8AyvuWNMUDCgc6tIsPoeMvN7dY+5l4wVupD5We9z3syaz15XLawKizkua0DA1Zirlvjx6HF/p1koEHPIIcxV/VMmGB8z3Yp2xrL2rU/+EgV5GI1KjYNsi9abIQOz5ebIGh5Lb7AhME1af1mnTbqnheP5+2UKIOnUjNMECvXq4VaHweDR3CwFrhhkWuI2mQoF98j/SJIinSuLJ0vSYw0vDjMGgLAC2Ks7LnNnvYaBYcRzuf2MG3J5rUvUok5FqRqt0uSFJWb2qHiRSm2bShbFw83QfeknOih5hVed5MwvqMUlUVTx+gD5O4L3lXQskEOvL+ZF7aOBNTuXLURgTO1NILYwbsPwJ7s4sKy5sS9SHDHt/4C0aVCC/jh5qTkL2rM5cNJ54E5OcYiQ1SJtnPhLgkkCpxClBtW7AcLjhY=
+  skip_cleanup: true
   on:
     tags: true
     node: 4
