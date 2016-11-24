@@ -20,9 +20,9 @@ after_deploy:
         git clone -q --branch gh-pages "https://${GH_TOKEN}@github.com/prosvita/crh.transliteration.git" gh-pages
         cp -rf ./index.html ./dist ./gh-pages
         cd gh-pages
-        gzip -fk -- ./dist/*.js
+        for f in ./dist/*.js; do gzip -c ${f} > ${f}.gz; done
         git add .
         git -c user.name="TravisCI" -c user.email="travis" commit -m "Travis Build for ${TRAVIS_TAG}"
-        git push -q origin gh-pages &2>/dev/null
+        git push -q origin gh-pages
         cd "$TRAVIS_BUILD_DIR"
       fi
