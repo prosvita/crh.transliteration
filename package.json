@@ -16,7 +16,7 @@
     "lint": "$(npm bin)/eslint .",
     "test": "npm run lint && npm run test-unit-coverage",
     "test-browser": "$(npm bin)/karma start --browsers Chrome",
-    "test-unit": "$(npm bin)/mocha -u bdd -R spec test/*.test.js",
+    "test-unit": "mocha -u bdd -R spec test/*.test.js",
     "test-unit-coverage": "$(npm bin)/istanbul cover $(npm bin)/_mocha -- -u bdd -R spec test/*.test.js"
   },
   "repository": {
