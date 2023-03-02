@@ -1,6 +1,6 @@
 {
   "name": "transliteration.crh",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Transliteration tool for Crimean Tatar language (Latin and Cyrillic alphabets)",
   "main": "./lib/transliteration.crh.js",
   "bin": {
@@ -16,7 +16,7 @@
     "lint": "$(npm bin)/eslint .",
     "test": "npm run lint && npm run test-unit-coverage",
     "test-browser": "$(npm bin)/karma start --browsers Chrome",
-    "test-unit": "$(npm bin)/mocha -u bdd -R spec",
+    "test-unit": "mocha -u bdd -R spec test/*.test.js",
     "test-unit-coverage": "$(npm bin)/istanbul cover $(npm bin)/_mocha -- -u bdd -R spec test/*.test.js"
   },
   "repository": {
