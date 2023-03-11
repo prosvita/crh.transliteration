@@ -9,13 +9,13 @@ describe('run cli', () => {
     it('without options', () => {
         assert.equal(
             spawn('./bin/crh', [], {encoding: 'utf8'}).stderr,
-            'Must select one of the options: --to-cyrillic, --from-cyrillic\n');
+            'Must select one of the options: --to-cyrillic, --from-cyrillic, --to-first-latin, --from-first-latin\n');
     });
 
     it('more than one action', () => {
         assert.equal(
             spawn('./bin/crh', [ '-c', '-l' ], {encoding: 'utf8'}).stderr,
-            'Must select one of the options: --to-cyrillic, --from-cyrillic\n');
+            'Must select one of the options: --to-cyrillic, --from-cyrillic, --to-first-latin, --from-first-latin\n');
     });
 
     it('--to-cyrillic to stdout', () => {
